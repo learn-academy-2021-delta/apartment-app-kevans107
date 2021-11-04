@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Apartment Model Structure 
+rails g resource Apartment street:string city:string state:string manager:string email:string price:string bedrooms:integer bathrooms:float pets:string user_id:integer
