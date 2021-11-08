@@ -7,7 +7,7 @@ class Footer extends Component{
       <footer>
         <div className="nav-bar">
             <ul>
-            <NavLink to="/" className="nav-footer">&copy; 2021 Kelly Evans | Tree Top Apartments</NavLink>
+            <NavLink to="/" className="nav-footer">&copy; 2021 Kelly Evans | Tree House Apartments</NavLink>
           </ul>
           <ul>
             <NavLink to="/apartmentindex" className="nav-footer">View Apartments</NavLink>

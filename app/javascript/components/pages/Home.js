@@ -17,7 +17,7 @@ class Home extends Component {
                 className="home-image"
              />
              <div className="home-body">
-                 <h1 className="home-header">Tree Top Apartments</h1>
+                 <h1 className="home-header">Tree House Apartments</h1>
                  <br/>
                  <div className="home-row">
                      <div className="home-column">
