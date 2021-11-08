@@ -18,7 +18,13 @@ class Header extends Component {
         </NavLink>
         <div className="nav-bar">
           <ul>
+            <NavLink to="/" className="nav-link">Home</NavLink>
+          </ul>
+          <ul>
             <NavLink to="/apartmentindex" className="nav-link">View Apartments</NavLink>
+          </ul>
+          <ul>
+            <NavLink to="/createaccount" className="nav-link">Create An Account</NavLink>
           </ul>
           <ul>
             {logged_in &&
