@@ -14,7 +14,7 @@
  *= require_self
  */
 
-//  @import 'bootstrap';
+ @import 'bootstrap';
  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
  
 
@@ -23,7 +23,24 @@
      padding: 0;
      font-family: 'Poppins', sans-serif;
  }
-
+ .page-body {
+    background-color: white;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+  }
+  .button {
+    padding: 10px;
+    background-color: #8bc349;
+    color: black;
+    font-weight: bolder;
+  }
+  .button:hover {
+    cursor: pointer;
+    background-color: #008037;
+    color: black;
+  }
  /* HEADER */
  header {
      display: flex;
@@ -65,7 +82,6 @@
     background-attachment: fixed;
     background-size: cover;
     margin-top:50px;
-    width: 100%;
     height: 50%;
 }
 @media (max-width: 480px) {
@@ -77,6 +93,8 @@
     position: relative;
     text-align: center;
     color: white;
+    height: 100%;
+    margin: 0;
 }
 .home-body {
     position: absolute;
@@ -139,3 +157,24 @@ footer {
     text-decoration:underline;
 }
 
+
+/* APARTMENT INDEX */
+.card {
+    text-align: left;
+    border: 1px solid black;
+    padding: 40px;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .cards {
+    flex: 1 1 30%;
+    height: 100px;
+    width: auto;
+  }
+  .fa-icon {
+    font-size: 25px;
+    padding-right: 10px;
+  }

@@ -30,6 +30,8 @@ class Header extends Component {
             {logged_in &&
               <a href={sign_out_route} className="nav-link">Sign Out</a>
             }
+            </ul>
+            <ul>
             {!logged_in &&
               <a href={sign_in_route} className="nav-link">Sign In</a>
             }
