@@ -4,10 +4,13 @@ import Home from './pages/Home'
 import Footer from './components/Footer'
 import ApartmentIndex from './pages/ApartmentIndex'
 import CreateAccount from './pages/CreateAccount'
+import ApartmentShow from './pages/ApartmentShow'
+import ShowTest from './pages/ShowTest'
+
 
 import {
   BrowserRouter as  Router,
-  Routes,
+  Switch,
   Route
 } from 'react-router-dom'
 
@@ -15,12 +18,24 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      apartments: []
+      apartments: [],
+      count: 0
     }
   }
   componentDidMount(){
     this.readApartment()
   }
+
+  nextSlide = () => {
+    this.setState({count: this.state.count + 1})
+  }
+
+  previousSlide = () => {
+    this.setState({count: this.state.count - 1}) 
+    // need to add a conditional that if the count is zero it stops
+  }
+ 
+
   readApartment = () => {
     fetch("/apartments")
     .then(response => response.json())
@@ -32,13 +47,20 @@ class App extends Component {
     return (
       <Router>
         <Header {...this.props} />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
+        <Switch>
+          <Route exact path="/" component={Home} />
           <Route 
           path="/apartmentindex" 
-          element={<ApartmentIndex apartments={apartments} />} />
+          render={() => <ApartmentIndex apartments={apartments} />}
+          />
+          <Route path="/apartmentshow/:id" render={ (props) => {
+            let id = +props.match.params.id
+            let apartment = this.state.apartments.find(a => a.id === id)
+            return <ApartmentShow apartment={apartment} />
+          }}/>
           <Route path="/createAccount" element={<CreateAccount />} />
-        </Routes>
+          <Route path="/showTest" component={ShowTest} />
+        </Switch>
         <Footer {...this.props} />
       </Router>
     )
