@@ -65,6 +65,7 @@ class ApartmentShow extends Component{
                         </Button>
                     </NavLink>
                     </div>
+                    
             }
       </div>
       )
